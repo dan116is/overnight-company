@@ -172,15 +172,14 @@
         <p>עדיין לא נעול. בדף הזה אין תמחור סופי.</p>
       </details>
     </section>
-    <section id="waitlist">
+        <section id="waitlist">
       <h2>רשימת המתנה</h2>
-      <p>השעון רץ: <strong style="color:var(--text)">Overnight by Sunday</strong>. השאירו פרטים ונחזור עם לילה ניסיון — בלי אוטו־שליחה מצדנו.</p>
-      <label style="display:block;margin:10px 0 6px;color:var(--muted)" for="email">אימייל</label>
-      <input id="email" name="email" type="email" required placeholder="you@company.com" style="width:100%;max-width:420px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#0e1528;color:var(--text)" />
+      <p>השעון רץ: <strong style="color:var(--text)">Overnight by Sunday</strong>. הצטרפות דרך GitHub Issue עם התווית <code>waitlist</code> — זה ה־inbox החי שלנו כרגע. Never auto-send.</p>
       <div class="ctas">
-        <button class="btn btn-primary" type="button" id="waitlist-btn">הצטרפו לרשימה</button>
+        <a class="btn btn-primary" href="https://github.com/dan116is/overnight-company/issues/new?labels=waitlist&amp;title=Overnight%20waitlist%3A%20" target="_blank" rel="noopener">פתחו בקשת המתנה ב־GitHub</a>
+        <a class="btn btn-secondary" href="https://github.com/dan116is/overnight-company/issues?q=is%3Aissue+label%3Awaitlist" target="_blank" rel="noopener">צפו בתור המתנה</a>
       </div>
-      <p class="note" id="waitlist-note">נשמור את הבקשה מקומית בדפדפן עד שנחבר inbox חי. אין שליחה אוטומטית.</p>
+      <p class="note">כל בקשה נפתחת כ־Issue אצלנו (label: waitlist). נענה ידנית. אין שליחה אוטומטית החוצה.</p>
     </section>
     <section id="trial">
       <h2>לילה ניסיון</h2>
@@ -191,23 +190,5 @@
       משטח חי v2 · מחיר לא נעול · אפס אוטו־שליחה
     </footer>
   </div>
-  <script>
-    document.getElementById('waitlist-btn').addEventListener('click', function () {
-      var email = document.getElementById('email').value.trim();
-      var note = document.getElementById('waitlist-note');
-      if (!email || email.indexOf('@') < 1) {
-        note.textContent = 'הכניסו אימייל תקין.';
-        return;
-      }
-      try {
-        var list = JSON.parse(localStorage.getItem('overnight_waitlist') || '[]');
-        if (list.indexOf(email) === -1) list.push(email);
-        localStorage.setItem('overnight_waitlist', JSON.stringify(list));
-        note.textContent = 'נרשמתם מקומית. נחבר inbox חי בסבב הבא — בלי אוטו־שליחה.';
-      } catch (e) {
-        note.textContent = 'נרשם. תודה — נחזור ידנית.';
-      }
-    });
-  </script>
 </body>
 </html>
