@@ -118,16 +118,19 @@
       </div>
       <p class="en">Drafts overnight. Human Approve / Hold in the morning. Nothing sends without you.</p>
     </div>
+
     <section>
       <h2>למי זה</h2>
       <p>מייסדים סולו וסטודיוים קטנים שצריכים להתקדם בלילה — בלי לשרוף מוניטין בשליחה אוטומטית.</p>
       <p>בין "יש לי כיוון גס" לבין "יש דף + טיוטות מוכנות לאישור בבוקר".</p>
     </section>
+
     <section>
       <h2>הכאב</h2>
       <p>ביום עובדים. בלילה העסק עומד. כשחוזרים בבוקר — אין נחיתה, אין מחקר מסודר, אין טיוטות, והשעון הציבורי נשרף.</p>
       <p>מצד שני, בותים בלי שער Approve קשיח שולחים זבל החוצה — וזה בדיוק מה שלא קורה כאן.</p>
     </section>
+
     <section>
       <h2>מה קורה בלילה</h2>
       <ol>
@@ -138,6 +141,7 @@
         <li><strong style="color:var(--text)">תמיכה</strong> — FAQ וחוקי handoff.</li>
       </ol>
     </section>
+
     <section id="gate">
       <h2>השער האנושי (HITL)</h2>
       <table>
@@ -149,10 +153,12 @@
       </table>
       <p style="margin-top:14px">אין שליחת מייל, פוסט או הודעה בלי Approve מפורש.</p>
     </section>
+
     <section>
       <h2>מה לא קורה בלילה</h2>
       <p>אין שליחה אוטומטית · אין ספאם קר · אין מחיר סופי בדף · אין מוצר מלא לפני משטח חי מאושר.</p>
     </section>
+
     <section class="faq">
       <h2>FAQ</h2>
       <details open>
@@ -172,23 +178,58 @@
         <p>עדיין לא נעול. בדף הזה אין תמחור סופי.</p>
       </details>
     </section>
-        <section id="waitlist">
+
+    <section id="waitlist">
       <h2>רשימת המתנה</h2>
-      <p>השעון רץ: <strong style="color:var(--text)">Overnight by Sunday</strong>. הצטרפות דרך GitHub Issue עם התווית <code>waitlist</code> — זה ה־inbox החי שלנו כרגע. Never auto-send.</p>
+      <p>השעון רץ: <strong style="color:var(--text)">Overnight by Sunday</strong>. השאירו אימייל — נפתח בקשת waitlist בפרויקט לסקירה ידנית. בלי אוטו־שליחה מצדנו.</p>
+      <label style="display:block;margin:10px 0 6px;color:var(--muted)" for="email">אימייל</label>
+      <input id="email" name="email" type="email" required placeholder="you@company.com" autocomplete="email" style="width:100%;max-width:420px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#0e1528;color:var(--text)" />
       <div class="ctas">
-        <a class="btn btn-primary" href="https://github.com/dan116is/overnight-company/issues/new?labels=waitlist&amp;title=Overnight%20waitlist%3A%20" target="_blank" rel="noopener">פתחו בקשת המתנה ב־GitHub</a>
+        <button class="btn btn-primary" type="button" id="waitlist-btn">הצטרפו לרשימה</button>
         <a class="btn btn-secondary" href="https://github.com/dan116is/overnight-company/issues?q=is%3Aissue+label%3Awaitlist" target="_blank" rel="noopener">צפו בתור המתנה</a>
       </div>
-      <p class="note">כל בקשה נפתחת כ־Issue אצלנו (label: waitlist). נענה ידנית. אין שליחה אוטומטית החוצה.</p>
+      <p class="note" id="waitlist-note">ההצטרפות נשלחת לתיבת ההמתנה של הפרויקט (GitHub Issues, תווית waitlist) ונבדקת ידנית. אין שליחה אוטומטית. נדרש חשבון GitHub כדי לאשר את הבקשה.</p>
+      <p class="en">Join opens a labeled waitlist issue on the public project tracker for manual review. Never auto-send.</p>
     </section>
+
     <section id="trial">
       <h2>לילה ניסיון</h2>
-      <p>רוצים לילה אחד על הצעה מיקרו שלכם? כתבו "trial night" בנושא המייל אחרי ההצטרפות לרשימה — נאשר ידנית.</p>
+      <p>רוצים לילה אחד על הצעה מיקרו שלכם? אחרי ההצטרפות לרשימה, בחרו "Trial night" בטופס ה־issue או כתבו זאת בהערות — נאשר ידנית. בלי אוטו־שליחה.</p>
     </section>
+
     <footer>
       Overnight Company · Overnight Drafts + Hard Approve Gate · Overnight by Sunday<br />
-      משטח חי v2 · מחיר לא נעול · אפס אוטו־שליחה
+      משטח חי v2.1 · waitlist → GitHub Issues · מחיר לא נעול · אפס אוטו־שליחה
     </footer>
   </div>
+  <script>
+    document.getElementById('waitlist-btn').addEventListener('click', function () {
+      var email = document.getElementById('email').value.trim();
+      var note = document.getElementById('waitlist-note');
+      if (!email || email.indexOf('@') < 1) {
+        note.textContent = 'הכניסו אימייל תקין.';
+        return;
+      }
+      var title = 'Waitlist: ' + email;
+      var body = [
+        '### Email',
+        email,
+        '',
+        '### Intent',
+        'Waitlist only',
+        '',
+        '### Notes',
+        '(optional)',
+        '',
+        '_Submitted from overnight-company.vercel.app — manual review only. Never auto-send._'
+      ].join('\n');
+      var url = 'https://github.com/dan116is/overnight-company/issues/new'
+        + '?labels=waitlist'
+        + '&title=' + encodeURIComponent(title)
+        + '&body=' + encodeURIComponent(body);
+      note.textContent = 'נפתח טופס בקשת waitlist בתיבת הפרויקט. אשרו את יצירת ה־issue ב־GitHub — סקירה ידנית בלבד, בלי אוטו־שליחה.';
+      window.open(url, '_blank', 'noopener,noreferrer');
+    });
+  </script>
 </body>
 </html>
