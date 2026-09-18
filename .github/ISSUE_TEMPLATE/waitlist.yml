@@ -1,0 +1,33 @@
+name: Waitlist signup
+description: Join the Overnight Company waitlist (manual review, never auto-send)
+title: "Waitlist: "
+labels: ["waitlist"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for joining the Overnight Company waitlist.
+        Submissions are reviewed manually. Nothing is auto-sent on your behalf.
+  - type: input
+    id: email
+    attributes:
+      label: Email
+      description: Where we can reach you about a trial night
+      placeholder: you@company.com
+    validations:
+      required: true
+  - type: dropdown
+    id: intent
+    attributes:
+      label: What do you want?
+      options:
+        - Waitlist only
+        - Trial night (write trial night in the notes too)
+        - Not sure yet
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes (optional)
+      description: One-line context about your product or ask. No outreach will be sent without your Approve.
