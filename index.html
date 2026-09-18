@@ -1,1 +1,213 @@
-PLACEHOLDER
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Overnight Company — טיוטות בלילה, אישור בבוקר</title>
+  <meta name="description" content="Overnight Drafts + Hard Approve Gate. בלילה טיוטות; בבוקר רק Approve / Hold. Never auto-send. שעון: Overnight by Sunday." />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #121a2f;
+      --text: #eef2ff;
+      --muted: #a8b0c7;
+      --accent: #7c9cff;
+      --good: #5eead4;
+      --line: #243049;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: radial-gradient(1200px 600px at 80% -10%, #1a2748 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 48px 20px 80px; }
+    .clock {
+      display: inline-block;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      color: var(--good);
+      border: 1px solid #2a4a45;
+      background: #10241f;
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+    h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; margin: 0 0 16px; }
+    .tagline { font-size: 1.25rem; color: var(--muted); margin: 0 0 28px; }
+    .hero-card {
+      background: linear-gradient(180deg, #15203a, var(--card));
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 28px;
+    }
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+    .pill {
+      font-size: 13px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #1a243d;
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+    .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0; }
+    a.btn, button.btn {
+      appearance: none;
+      border: 0;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .btn-primary { background: var(--accent); color: #0b1020; }
+    .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--line); }
+    section { margin: 40px 0; }
+    h2 { font-size: 1.35rem; margin: 0 0 12px; }
+    p { color: var(--muted); margin: 0 0 12px; }
+    ol { color: var(--muted); padding-inline-start: 1.2rem; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th, td { border: 1px solid var(--line); padding: 10px 12px; text-align: right; }
+    th { background: #15203a; color: var(--text); }
+    td { color: var(--muted); }
+    .faq details {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin: 10px 0;
+    }
+    .faq summary { cursor: pointer; font-weight: 600; color: var(--text); }
+    .faq p { margin-top: 8px; }
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .note {
+      font-size: 13px;
+      color: #8b93a7;
+      margin-top: 10px;
+    }
+    .en { direction: ltr; text-align: left; font-size: 14px; color: #8b93a7; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="clock">שעון ציבורי · Overnight by Sunday</div>
+    <div class="hero-card">
+      <h1>Overnight Company</h1>
+      <p class="tagline">טיוטות בלילה.<br />אישור אנושי בבוקר.<br />שום דבר לא נשלח בלי Approve.</p>
+      <p><strong style="color:var(--text)">Overnight Drafts + Hard Approve Gate</strong> — בלילה: נחיתה + טיוטות פנייה + FAQ. בבוקר: רק Approve / Hold. Never auto-send.</p>
+      <div class="pills">
+        <span class="pill">HITL</span>
+        <span class="pill">landing-first</span>
+        <span class="pill">never auto-send</span>
+        <span class="pill">מחיר עדיין לא נעול</span>
+      </div>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#waitlist">הצטרפו לרשימת המתנה</a>
+        <a class="btn btn-secondary" href="#trial">בקשו לילה ניסיון</a>
+        <a class="btn btn-secondary" href="#gate">איך השער עובד</a>
+      </div>
+      <p class="en">Drafts overnight. Human Approve / Hold in the morning. Nothing sends without you.</p>
+    </div>
+    <section>
+      <h2>למי זה</h2>
+      <p>מייסדים סולו וסטודיוים קטנים שצריכים להתקדם בלילה — בלי לשרוף מוניטין בשליחה אוטומטית.</p>
+      <p>בין "יש לי כיוון גס" לבין "יש דף + טיוטות מוכנות לאישור בבוקר".</p>
+    </section>
+    <section>
+      <h2>הכאב</h2>
+      <p>ביום עובדים. בלילה העסק עומד. כשחוזרים בבוקר — אין נחיתה, אין מחקר מסודר, אין טיוטות, והשעון הציבורי נשרף.</p>
+      <p>מצד שני, בותים בלי שער Approve קשיח שולחים זבל החוצה — וזה בדיוק מה שלא קורה כאן.</p>
+    </section>
+    <section>
+      <h2>מה קורה בלילה</h2>
+      <ol>
+        <li><strong style="color:var(--text)">מחקר</strong> — אותות אמיתיים, לא רעיונות מהאוויר.</li>
+        <li><strong style="color:var(--text)">כיוון</strong> — הצעה אחת ברורה + חלופה קצרה.</li>
+        <li><strong style="color:var(--text)">נחיתה</strong> — טיוטת דף לפני מוצר מלא.</li>
+        <li><strong style="color:var(--text)">טיוטות פנייה</strong> — מוכנות לעריכה; שליחה רק אחרי Approve.</li>
+        <li><strong style="color:var(--text)">תמיכה</strong> — FAQ וחוקי handoff.</li>
+      </ol>
+    </section>
+    <section id="gate">
+      <h2>השער האנושי (HITL)</h2>
+      <table>
+        <thead><tr><th>בבוקר</th><th>מה קורה</th></tr></thead>
+        <tbody>
+          <tr><td>Approve</td><td>הטיוטה מאושרת לצעד הבא שסימנתם</td></tr>
+          <tr><td>Hold</td><td>נשארת בתור עם הערה — לא יוצאת</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:14px">אין שליחת מייל, פוסט או הודעה בלי Approve מפורש.</p>
+    </section>
+    <section>
+      <h2>מה לא קורה בלילה</h2>
+      <p>אין שליחה אוטומטית · אין ספאם קר · אין מחיר סופי בדף · אין מוצר מלא לפני משטח חי מאושר.</p>
+    </section>
+    <section class="faq">
+      <h2>FAQ</h2>
+      <details open>
+        <summary>זה שולח מיילים בשבילי בלילה?</summary>
+        <p>לא. בלילה רק טיוטות. שליחה רק אחרי Approve. Never auto-send.</p>
+      </details>
+      <details>
+        <summary>מה ההבדל מ"בוט שכותב לבד"?</summary>
+        <p>Hard Approve Gate: אדם בליבה לכל יציאה החוצה.</p>
+      </details>
+      <details>
+        <summary>צריך מוצר מלא לפני שמתחילים?</summary>
+        <p>לא. קודם נחיתה ושעון — אחר כך מוצר.</p>
+      </details>
+      <details>
+        <summary>יש מחיר?</summary>
+        <p>עדיין לא נעול. בדף הזה אין תמחור סופי.</p>
+      </details>
+    </section>
+    <section id="waitlist">
+      <h2>רשימת המתנה</h2>
+      <p>השעון רץ: <strong style="color:var(--text)">Overnight by Sunday</strong>. השאירו פרטים ונחזור עם לילה ניסיון — בלי אוטו־שליחה מצדנו.</p>
+      <label style="display:block;margin:10px 0 6px;color:var(--muted)" for="email">אימייל</label>
+      <input id="email" name="email" type="email" required placeholder="you@company.com" style="width:100%;max-width:420px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#0e1528;color:var(--text)" />
+      <div class="ctas">
+        <button class="btn btn-primary" type="button" id="waitlist-btn">הצטרפו לרשימה</button>
+      </div>
+      <p class="note" id="waitlist-note">נשמור את הבקשה מקומית בדפדפן עד שנחבר inbox חי. אין שליחה אוטומטית.</p>
+    </section>
+    <section id="trial">
+      <h2>לילה ניסיון</h2>
+      <p>רוצים לילה אחד על הצעה מיקרו שלכם? כתבו "trial night" בנושא המייל אחרי ההצטרפות לרשימה — נאשר ידנית.</p>
+    </section>
+    <footer>
+      Overnight Company · Overnight Drafts + Hard Approve Gate · Overnight by Sunday<br />
+      משטח חי v2 · מחיר לא נעול · אפס אוטו־שליחה
+    </footer>
+  </div>
+  <script>
+    document.getElementById('waitlist-btn').addEventListener('click', function () {
+      var email = document.getElementById('email').value.trim();
+      var note = document.getElementById('waitlist-note');
+      if (!email || email.indexOf('@') < 1) {
+        note.textContent = 'הכניסו אימייל תקין.';
+        return;
+      }
+      try {
+        var list = JSON.parse(localStorage.getItem('overnight_waitlist') || '[]');
+        if (list.indexOf(email) === -1) list.push(email);
+        localStorage.setItem('overnight_waitlist', JSON.stringify(list));
+        note.textContent = 'נרשמתם מקומית. נחבר inbox חי בסבב הבא — בלי אוטו־שליחה.';
+      } catch (e) {
+        note.textContent = 'נרשם. תודה — נחזור ידנית.';
+      }
+    });
+  </script>
+</body>
+</html>
